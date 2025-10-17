@@ -39,6 +39,7 @@ from .custom.humanoid_env import XBotLFreeEnv
 from .custom.kuavo_env import KuavoFreeEnv
 from .custom.kuavo_config import KuavoCfg, KuavoCfgPPO
 
+
 from .custom.kuavoclean_env import KuavoCleanFreeEnv
 from .custom.kuavoclean_config import KuavoCleanCfg, KuavoCleanCfgPPO
 
@@ -48,15 +49,23 @@ from .custom.delta_action_env import DeltaActionEnv
 from .custom.finetuning_policy_config import FineTuningCfg, FineTuningCfgPPO
 from .custom.finetuning_policy_env import FineTuningFreeEnv
 
+from .custom.kuavo_sus_config import KuavoSuspendedCfg, KuavoSuspendedCfgPPO
+from .custom.kuavo_sus_env import KuavoSuspendedFreeEnv
+
 from humanoid.utils.task_registry import task_registry
+
+
 
 
 task_registry.register("humanoid_ppo", XBotLFreeEnv, XBotLCfg(), XBotLCfgPPO())
 
 task_registry.register("kuavo_ppo", KuavoFreeEnv, KuavoCfg(), KuavoCfgPPO())
 
+
 task_registry.register("kuavo_clean_ppo", KuavoCleanFreeEnv, KuavoCleanCfg(), KuavoCleanCfgPPO())
 
 task_registry.register("delta_action_model_ppo", DeltaActionEnv, DeltaActionCfg(), DeltaActionCfgPPO())
 
 task_registry.register("finetuning_policy_ppo", FineTuningFreeEnv, FineTuningCfg(), FineTuningCfgPPO())
+
+task_registry.register("kuavo_sus_ppo", KuavoSuspendedFreeEnv, KuavoSuspendedCfg(), KuavoSuspendedCfgPPO())
